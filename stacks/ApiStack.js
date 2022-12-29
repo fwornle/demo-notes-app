@@ -8,6 +8,13 @@ export function ApiStack({ stack, app }) {
   const api = new Api(stack, "Api", {
       // Enabled by default
     cors: true,
+    customDomain:
+      app.stage === "prod" 
+      ? {
+        hostedZone: "tanfra.com",
+        domainName: "api.notes.tanfra.com",
+      } 
+      : undefined,
     defaults: {
       authorizer: "iam",
       function: {
@@ -30,7 +37,7 @@ export function ApiStack({ stack, app }) {
 
   // Show the API endpoint in the output
   stack.addOutputs({
-    ApiEndpoint: api.url,
+    ApiEndpoint: api.customDomainUrl || api.url,
   });
 
   // Return the API resource
