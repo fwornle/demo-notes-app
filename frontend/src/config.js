@@ -1,4 +1,5 @@
 const config = {
+    SENTRY_DSN: "https://baf002c987d84ad0b8d5ba09ae8d6751@o4504417074479104.ingest.sentry.io/4504417088307200",
     STRIPE_KEY: "pk_test_51MHnTUGmGFdAfhKY1kaxZEV7jIYbvw1XOpz6j1pFs6mHbhceEOWiZWFDcBIZpRxK5EdfBx3ZovrgrQAT4k3Xep0A00rOVHmsE0",
     MAX_ATTACHMENT_SIZE: 5000000,
     // Backend config
